@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doce Ninar - Loja para Bebês</title>
+  <link rel="icon" href="Logo.png" type="image/png">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f8efff;
+      color: #5a3e6f;
+    }
+
+    header,
+    footer {
+      background: linear-gradient(90deg, #f8bbd0, #d1c4e9);
+      color: #4a2c68;
+      text-align: center;
+      padding: 25px 20px;
+      position: relative;
+    }
+
+    header img,
+footer img {
+  width: 200px;
+  height: 200px;
+  border-radius: 0;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 10px;
+}
+
+
+    header h1 {
+      margin: 0;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      background-color: #d1c4e9;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 15px 0;
+      box-shadow: 0 2px 6px rgba(90, 62, 111, 0.3);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #5a3e6f;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      padding: 5px 10px;
+      border-radius: 8px;
+      transition: background-color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #f8bbd0;
+      color: #381f54;
+    }
+
+    .hero {
+      background: url('conforto.jpg') no-repeat center center/cover;
+      height: 50vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-shadow: 2px 2px 6px #000;
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      color: #6f4a8e;
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    @media (max-width: 900px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .products-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .product-card {
+      background: #fff0f6;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(90, 62, 111, 0.15);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .product-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(90, 62, 111, 0.3);
+    }
+
+    .product-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 15px;
+      margin-bottom: 15px;
+    }
+
+    .product-card h3 {
+      margin-bottom: 10px;
+      color: #6f4a8e;
+    }
+
+    .product-card p {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #a94a85;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    form input,
+    form textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: 2px solid #66ccff;
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+
+    form button {
+      background-color: #C8A2C8;
+      color: #000;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: 1rem;
+    }
+
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25d366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 30px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      text-decoration: none;
+      z-index: 999;
+    }
+html {
+  scroll-behavior: smooth;
+}
+
+  </style>
+</head>
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="logo.png" alt="Logo Doce Ninar" />
+  </header>
+
+  <nav>
+    <a href="#">Início</a>
+    <a href="#produtos">Produtos</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <div class="hero">Tudo para o sono e conforto do seu bebê!</div>
+    </div>
+  </section>
+<section id="produtos">
+    <h2>Nossos Produtos</h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="body.webp" alt="Body Bebê" />
+        <h3>Body de Algodão</h3>
+        <p>R$ 49,90</p>
+      </div>
+      <div class="product-card">
+        <img src="manta.jpg" alt="Manta para Bebê" />
+        <h3>Manta Macia</h3>
+        <p>R$ 89,90</p>
+      </div>
+      <div class="product-card">
+        <img src="chupeta.png" alt="Chupeta" />
+        <h3>Chupeta Ergonômica</h3>
+        <p>R$ 24,90</p>
+      </div>
+      <div class="product-card">
+        <img src="babador.jpg" alt="Babador Bebê" />
+        <h3>Babador Colorido</h3>
+        <p>R$ 29,90</p>
+      </div>
+      <div class="product-card">
+        <img src="sapatinho.webp" alt="Sapatinho Bebê" />
+        <h3>Sapatinho de Tricô</h3>
+        <p>R$ 39,90</p>
+      </div>
+      <div class="product-card">
+        <img src="cobertor.webp" alt="Cobertor" />
+        <h3>Cobertor Aconchegante</h3>
+        <p>R$ 99,90</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Fale Conosco</h2>
+    <p style="text-align:center; max-width:600px; margin:auto;">
+      Quer saber mais ou fazer um pedido personalizado? Entre em contato conosco!
+    </p>
+    <form id="form-contato">
+      <input type="text" id="nome" placeholder="Seu nome" required>
+      <input type="email" id="email" placeholder="Seu e-mail" required>
+      <textarea id="mensagem" placeholder="Sua mensagem" required></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Botão WhatsApp -->
+  <a href="https://wa.me/5524998706460" class="whatsapp-button" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <footer>
+    <img src="logo.png" alt="Logo Doce Ninar" />
+    <p>&copy; 2025 Doce Ninar. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    document.getElementById("form-contato").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const email = document.getElementById("email").value;
+      const mensagem = document.getElementById("mensagem").value;
+      const numeroWhatsApp = "5524998706460";
+      const texto = `Olá, me chamo ${nome}%0AEmail: ${email}%0AMensagem: ${mensagem}`;
+      const link = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+      window.open(link, '_blank');
+    });
+  </script>
+</body>
+
+</html>
